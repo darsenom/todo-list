@@ -3,27 +3,32 @@
     {
       "id": 1,
       "title": "Mow lawn",
-      "note": "Should be done by 28 feb"
+      "note": "Should be done by 28 feb",
+      "status": "not sarted"
     },
     {
       "id": 2,
       "title": "Wash car",
-      "note": "Use MkUiars Wax!"
+      "note": "Use MkUiars Wax!",
+      "status": "finished"
     },
     {
       "id": 3,
       "title": "Buy groceries",
-      "note": "Apples, bananas and some tomatoes."
+      "note": "Apples, bananas and some tomatoes.",
+      "status": "inProcess"
     },
     {
       "id": 4,
       "title": "Add validation",
-      "note": "No data validation is implemented in this app : fix this !"
+      "note": "No data validation is implemented in this app : fix this !",
+      "status": "not sarted"
     },
     {
       "id": 5,
       "title": "Add tests",
-      "note": "Add some unit tests !"
+      "note": "Add some unit tests !",
+      "status": "finished"
     }
   ]
 }

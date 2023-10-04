@@ -12,7 +12,25 @@
   </div>
 
   <div class="form-group">
+    <label for="taskStatus">Status</label>
+    <input type="text" id="taskStatus" class="form-control" [formControl]="status">
+  </div>
+
+  <div class="form-group">
+    <label for="taskDifficulty">Difficulty</label>
+    <input type="number" id="taskDifficulty" class="form-control" [formControl]="difficulty">
+  </div>
+
+  <div class="form-group">
     <button (click)="createTask()" class="btn btn-primary">Create</button>
     <button class="btn btn-light" [routerLink]="['/tasks']">Back</button>
   </div>
 </form>
+
+
+<!-- 
+<select class="form-control" id="exampleFormControlSelect1">
+  <option>not sarted</option>
+  <option>inProcess</option>
+  <option>finished</option>
+</select> -->

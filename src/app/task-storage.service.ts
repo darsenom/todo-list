@@ -73,9 +73,11 @@ export class TaskStorageService {
    * Create a new task based on the given data (+ generate a new id)
    * @param title
    * @param note
+   * @param status
+   * @param difficulty
    */
-  add(title, note) {
-    let task = new Task(title, note, this.getHighestId() + 1);
+  add(title, note, status, difficulty) {
+    let task = new Task(title, note, this.getHighestId() + 1, status, difficulty);
     this.tasks.push(task);
   }
 
@@ -85,14 +87,18 @@ export class TaskStorageService {
    * @param id
    * @param title
    * @param note
+   * @param status
+   * @param difficulty
    *
    * @return Task
    */
-  update(id, title: string, note: string): Task {
+  update(id, title: string, note: string, status: string, difficulty): Task {
 
     let task = this.get(id);
     task.title = title;
     task.note = note;
+    task.status = status;
+    task.difficulty = difficulty;
 
     return task;
   }
@@ -112,7 +118,9 @@ export class TaskStorageService {
         new Task(
           init_tasks[i]['title'],
           init_tasks[i]['note'],
-          init_tasks[i]['id'])
+          init_tasks[i]['id'],
+          init_tasks[i]['status'],
+          init_tasks[i]['difficulty'])
       );
     }
 
@@ -137,3 +145,4 @@ export class TaskStorageService {
     return highest;
   }
 }
+

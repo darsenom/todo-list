@@ -28,6 +28,16 @@ export class TaskEditComponent implements OnInit {
    */
   note = new FormControl('');
 
+   /**
+   *  Task status form field
+   */
+   status = new FormControl('');
+
+   /**
+   *  Task status form field
+   */
+   difficulty = new FormControl('');
+
 
   constructor(private storage: TaskStorageService, private route: ActivatedRoute, private router: Router) {
   }
@@ -41,6 +51,8 @@ export class TaskEditComponent implements OnInit {
       this.id = this.task.id;
       this.note.setValue(this.task.note);
       this.title.setValue(this.task.title);
+      this.status.setValue(this.task.status);
+      this.difficulty.setValue(this.task.difficulty);
     });
   }
 
@@ -48,7 +60,7 @@ export class TaskEditComponent implements OnInit {
    * Update the task and return to the list
    */
   updateTask() {
-    this.task = this.storage.update(this.id, this.title.value, this.note.value);
+    this.task = this.storage.update(this.id, this.title.value, this.note.value, this.status.value, this.difficulty.value);
     this.router.navigate(['/tasks'])
   }
 }
